@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { prismaClient } from "db/client";
 
 
@@ -10,3 +9,7 @@ export default async function Home() {
     </div>
   );
 }
+
+// export const revalidate = 60
+
+export const dynamic = 'force-dynamic'
