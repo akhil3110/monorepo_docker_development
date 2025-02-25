@@ -16,8 +16,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       
       - name: Debug - List all files in workspace
-        run: ls -R 
-        
+        run: cd docker & ls -R 
       - name: Build and push 
         uses: docker/build-push-action@v4
         with:
