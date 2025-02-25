@@ -33,5 +33,5 @@ app.post("/user", async(req, res) => {
 })
 
 app.listen(8080, () => {
-    console.log("App running on post 8080")
+    console.log("App runnin on port 8080")
 });
