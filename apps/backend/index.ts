@@ -5,16 +5,16 @@ const app = express();
 
 app.use(express.json());
 
-app.get("/users", (req, res) => {
+app.get("/users",async (req, res) => {
   try {
-    const allUsers = prismaClient.user.findMany()
-    res.json(allUsers);    
+    const allUsers = await prismaClient.user.findMany()
+    res.json({allUsers});    
   } catch (error) {
     console.log("error in /", error)
   }
 })
 
-app.post("/user", (req, res) => {
+app.post("/user", async(req, res) => {
   const { username, password } = req.body;
   
   if (!username || !password) {
@@ -22,7 +22,7 @@ app.post("/user", (req, res) => {
     return
   }
 
-  const user = prismaClient.user.create({
+  const user = await prismaClient.user.create({
     data: {
       username,
       password
@@ -32,4 +32,6 @@ app.post("/user", (req, res) => {
   res.status(201).json(user);
 })
 
-app.listen(8080);
+app.listen(8080, () => {
+    console.log("App running on post 8080")
+});
