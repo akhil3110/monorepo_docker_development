@@ -24,6 +24,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: ./docker/Docker.frontend
+          file: ./docker/Dockerfile.frontend
           push: true
           tags: akhil1659/todo-app-frontend:${{ github.sha }}
