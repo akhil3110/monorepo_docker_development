@@ -1,4 +1,4 @@
-name: Deploy the backend
+name: Deploy the Websocket Server
 on:
   push:
     branches: [ main ]
@@ -17,13 +17,15 @@ jobs:
       
       - name: Debug - List all files in workspace
         run: cd docker & ls -R 
+
+
       - name: Build and push 
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: ./docker/dockerfile.backend
+          file: ./docker/dockerfile.websocket
           push: true
-          tags: akhil1659/todo-app-backend:${{ github.sha }}
+          tags: akhil1659/todo-app-websocket:${{ github.sha }}
       
 
       # - name: Pull image on vm and run the image
