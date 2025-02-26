@@ -9,7 +9,7 @@
     "check-types": "turbo run check-types",
     "generate:db": "cd packages/db && bunx prisma generate",
     "migrate:db": "cd packages/db && bunx prisma migrate dev",
-    "start:backend": "bun run migrate:db && cd apps/backend && bun run index.ts",
+    "start:backend": "cd apps/backend && bun run index.ts",
     "start:websocket": "cd apps/websockets && bun run index.ts",
     "start:frontend": "cd apps/web && bun run start"
   },
