@@ -33,5 +33,4 @@ jobs:
           username: ubuntu
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-             sudo docker pull akhil1659/todo-app-backend:${{ github.sha }}
-             sudo docker run --name user_backend -d -p 8080:8080 akhil1659/todo-app-backend
+            sudo docker run --name user_backend -d -p 8080:8080 akhil1659/todo-app-backend:${{ github.sha }}

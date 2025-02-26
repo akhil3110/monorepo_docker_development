@@ -6,7 +6,7 @@ COPY . .
 
 RUN bun install
 
-RUN bun run generate:db
+# RUN bun run generate:db
 
 EXPOSE 8080
 
