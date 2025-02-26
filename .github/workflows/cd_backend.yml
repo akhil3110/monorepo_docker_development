@@ -26,15 +26,12 @@ jobs:
           tags: akhil1659/todo-app-backend:${{ github.sha }}
       
 
-      # - name: Pull image on vm and run the image
-      #   uses: appleboy/ssh-action@v1.0.3
-      #   with:
-      #     host: ec2-13-232-71-114.ap-south-1.compute.amazonaws.com
-      #     username: ubuntu
-      #     key: ${{ secrets.SSH_PRIVATE_KEY }}
-      #     script: |
-      #       cd link_shortner/ 
-      #       git pull origin main
-      #       npm install --omit=dev
-      #       npm run build
-      #       pm2 restart next-app
+      - name: Pull image on vm and run the image
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ec2-13-232-71-114.ap-south-1.compute.amazonaws.com
+          username: ubuntu
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+             sudo docker pull akhil1659/todo-app-backend:${{ github.sha }}
+             

@@ -2,10 +2,10 @@ FROM oven/bun:1
 
 WORKDIR /usr/src/app
 ARG DATABASE_URL
-
-
+ENV DATABASE_URL=${DATABASE_URL}
 
 COPY . .
+
 
 RUN bun install
 RUN bun run generate:db
